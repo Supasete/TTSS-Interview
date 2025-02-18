@@ -1,0 +1,2176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.11.1 on win32)" generated="2025-02-18T15:05:34.373360" rpa="false" schemaversion="5">
+<suite id="s1" name="E2E Saucedemo" source="c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\tests\e2e\e2e_saucedemo.robot">
+<test id="s1-t1" name="Verify Complete Ordering Work Flow On Saucedemo Website" line="6">
+<kw name="Open Browser" owner="Browser">
+<msg time="2025-02-18T15:05:34.519750" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2025-02-18T15:05:34.519750" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\E2E Result\\browser\\traces\\temp\\53282bb5-beb8-489f-9cd1-aead61b161cd"}</msg>
+<msg time="2025-02-18T15:05:34.541274" level="INFO">Starting Browser process C:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\.venv\Lib\site-packages\Browser\wrapper\index.js using port 52157</msg>
+<msg time="2025-02-18T15:05:34.541274" level="INFO">Node startup parameters: ['node', 'C:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\.venv\\Lib\\site-packages\\Browser\\wrapper\\index.js', '52157']</msg>
+<msg time="2025-02-18T15:05:35.289171" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\E2E Result\\browser\\traces\\temp\\53282bb5-beb8-489f-9cd1-aead61b161cd"}</msg>
+<msg time="2025-02-18T15:05:35.291662" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2025-02-18T15:05:35.317339" level="INFO">Successfully created context. </msg>
+<msg time="2025-02-18T15:05:35.317339" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2025-02-18T15:05:35.903589" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2025-02-18T15:05:34.518753" elapsed="1.384836"/>
+</kw>
+<kw name="Login Saucedemo" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:35.934561" level="INFO">Waited for Element with selector data-test=username at state visible</msg>
+<arg>${txtUsername}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:35.905122" elapsed="0.029439"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-02-18T15:05:35.936554" level="INFO">Fills the text 'standard_user' in the given field.</msg>
+<arg>${txtUsername}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:35.935557" elapsed="0.018513"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:35.966073" level="INFO">Waited for Element with selector data-test=password at state visible</msg>
+<arg>${txtPassword}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:35.955067" elapsed="0.011006"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-02-18T15:05:35.967580" level="INFO">Fills the text 'secret_sauce' in the given field.</msg>
+<arg>${txtPassword}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:35.966073" elapsed="0.011830"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:35.983886" level="INFO">Waited for Element with selector data-test=login-button at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:35.978901" elapsed="0.004985"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:35.984883" level="INFO">Clicks the element 'data-test=login-button'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:35.983886" elapsed="0.070249"/>
+</kw>
+<arg>${btnLogin}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:35.977903" elapsed="0.076232"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.067731" level="INFO">Waited for Element with selector xpath=//*[@data-test="inventory-item"][1]/div[2]/div[1]/a/div at state visible</msg>
+<arg>${lblProductSauceLabsBackpack}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.054135" elapsed="0.013596"/>
+</kw>
+<arg>${usernameStandard}</arg>
+<arg>${password}</arg>
+<doc>Owner: supasete.1998@gmail.com
+Keyword for login to saucedemo with username and password
+${username} : Input username from saucedemo such as standard_user, locked_out_user, problem_user, performance_glitch_user, error_user and visual_user
+secret_sauce : Input password from saucedemo such as secret_sauce</doc>
+<status status="PASS" start="2025-02-18T15:05:35.904609" elapsed="0.163122"/>
+</kw>
+<kw name="Select Add Product From List To Cart" owner="saucedemo_keyword">
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-02-18T15:05:36.073233" level="INFO">${index} = 6</msg>
+<var>${index}</var>
+<arg>${lblProduct}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.068735" elapsed="0.004498"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.073233" level="INFO">${add_product} = []</msg>
+<var>${add_product}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.073233" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.074735" level="INFO">${i} = 1</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.074735" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.094031" level="INFO">Waited for Element with selector //*[@data-test="inventory-item"][1]/div[2]/div[1]/a/div at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.075287" elapsed="0.020006"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.095795" level="INFO">Clicks the element '//*[@data-test="inventory-item"][1]/div[2]/div[1]/a/div'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.095795" elapsed="0.040690"/>
+</kw>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/div[1]/a/div</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.074735" elapsed="0.061750"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.165833" level="INFO">Text: 'Sauce Labs Backpack'</msg>
+<msg time="2025-02-18T15:05:36.165833" level="INFO">${product_name} = Sauce Labs Backpack</msg>
+<var>${product_name}</var>
+<arg>${lblProductnamedetailpage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.136485" elapsed="0.029348"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-18T15:05:36.165833" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt"&gt;c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt&lt;/a&gt;'.</msg>
+<msg time="2025-02-18T15:05:36.165833" level="INFO">${product_list} = Sauce Labs Backpack
+Sauce Labs Bolt T-Shirt
+Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product_list}</var>
+<arg>c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\sausedemo/../../configuration/saucedemo/localconfig/selectedProduct.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.165833" elapsed="0.001503"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-02-18T15:05:36.167336" level="INFO">3 lines returned</msg>
+<msg time="2025-02-18T15:05:36.167336" level="INFO">${product_list} = ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<var>${product_list}</var>
+<arg>${product_list}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.167336" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.167854" elapsed="0.000000"/>
+</kw>
+<msg time="2025-02-18T15:05:36.167854" level="INFO">${found_selected_product} = True</msg>
+<var>${found_selected_product}</var>
+<arg>List Should Contain Value</arg>
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.167854" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${found_selected_product} == ${True}">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.171212" level="INFO">Waited for Element with selector xpath=//*[@data-test="add-to-cart"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.168865" elapsed="0.003969"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.173339" level="INFO">Clicks the element 'xpath=//*[@data-test="add-to-cart"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.172834" elapsed="0.021963"/>
+</kw>
+<arg>${btnAddtocartdetailpage}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.167854" elapsed="0.026943"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${add_product}</arg>
+<arg>${product_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.194797" elapsed="0.000994"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.201672" level="INFO">Waited for Element with selector xpath=//*[@data-test="back-to-products"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.195791" elapsed="0.005881"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.201672" level="INFO">Clicks the element 'xpath=//*[@data-test="back-to-products"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.201672" elapsed="0.030803"/>
+</kw>
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.195791" elapsed="0.036684"/>
+</kw>
+<status status="PASS" start="2025-02-18T15:05:36.167854" elapsed="0.064621"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.233471" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-18T15:05:36.232475" elapsed="0.000996"/>
+</branch>
+<status status="PASS" start="2025-02-18T15:05:36.167854" elapsed="0.065617"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-18T15:05:36.073233" elapsed="0.160238"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.235773" level="INFO">${i} = 2</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.234750" elapsed="0.001023"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.243292" level="INFO">Waited for Element with selector //*[@data-test="inventory-item"][2]/div[2]/div[1]/a/div at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.236274" elapsed="0.008012"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.245286" level="INFO">Clicks the element '//*[@data-test="inventory-item"][2]/div[2]/div[1]/a/div'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.244286" elapsed="0.043945"/>
+</kw>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/div[1]/a/div</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.235773" elapsed="0.052458"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.305850" level="INFO">Text: 'Sauce Labs Bike Light'</msg>
+<msg time="2025-02-18T15:05:36.305850" level="INFO">${product_name} = Sauce Labs Bike Light</msg>
+<var>${product_name}</var>
+<arg>${lblProductnamedetailpage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.289231" elapsed="0.016619"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-18T15:05:36.307355" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt"&gt;c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt&lt;/a&gt;'.</msg>
+<msg time="2025-02-18T15:05:36.307355" level="INFO">${product_list} = Sauce Labs Backpack
+Sauce Labs Bolt T-Shirt
+Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product_list}</var>
+<arg>c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\sausedemo/../../configuration/saucedemo/localconfig/selectedProduct.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.307355" elapsed="0.000000"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-02-18T15:05:36.308367" level="INFO">3 lines returned</msg>
+<msg time="2025-02-18T15:05:36.308367" level="INFO">${product_list} = ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<var>${product_list}</var>
+<arg>${product_list}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.308367" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="List Should Contain Value" owner="Collections">
+<msg time="2025-02-18T15:05:36.308367" level="FAIL">[ Sauce Labs Backpack | Sauce Labs Bolt T-Shirt | Test.allTheThings() T-Shirt (Red) ] does not contain value 'Sauce Labs Bike Light'.</msg>
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="FAIL" start="2025-02-18T15:05:36.308367" elapsed="0.000997">[ Sauce Labs Backpack | Sauce Labs Bolt T-Shirt | Test.allTheThings() T-Shirt (Red) ] does not contain value 'Sauce Labs Bike Light'.</status>
+</kw>
+<msg time="2025-02-18T15:05:36.309364" level="INFO">${found_selected_product} = False</msg>
+<var>${found_selected_product}</var>
+<arg>List Should Contain Value</arg>
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.308367" elapsed="0.000997"/>
+</kw>
+<if>
+<branch type="IF" condition="${found_selected_product} == ${True}">
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>${btnAddtocartdetailpage}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.309364" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${add_product}</arg>
+<arg>${product_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.309364" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.309364" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-18T15:05:36.309364" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.317594" level="INFO">Waited for Element with selector xpath=//*[@data-test="back-to-products"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.310436" elapsed="0.007158"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.319606" level="INFO">Clicks the element 'xpath=//*[@data-test="back-to-products"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.318604" elapsed="0.036066"/>
+</kw>
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.310436" elapsed="0.044234"/>
+</kw>
+<status status="PASS" start="2025-02-18T15:05:36.309364" elapsed="0.045306"/>
+</branch>
+<status status="PASS" start="2025-02-18T15:05:36.309364" elapsed="0.045306"/>
+</if>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-02-18T15:05:36.234468" elapsed="0.120202"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.357395" level="INFO">${i} = 3</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.356176" elapsed="0.001219"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.369030" level="INFO">Waited for Element with selector //*[@data-test="inventory-item"][3]/div[2]/div[1]/a/div at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.358395" elapsed="0.010635"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.371028" level="INFO">Clicks the element '//*[@data-test="inventory-item"][3]/div[2]/div[1]/a/div'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.370028" elapsed="0.039478"/>
+</kw>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/div[1]/a/div</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.357395" elapsed="0.053358"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.428788" level="INFO">Text: 'Sauce Labs Bolt T-Shirt'</msg>
+<msg time="2025-02-18T15:05:36.428788" level="INFO">${product_name} = Sauce Labs Bolt T-Shirt</msg>
+<var>${product_name}</var>
+<arg>${lblProductnamedetailpage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.410753" elapsed="0.018035"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-18T15:05:36.430197" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt"&gt;c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt&lt;/a&gt;'.</msg>
+<msg time="2025-02-18T15:05:36.430197" level="INFO">${product_list} = Sauce Labs Backpack
+Sauce Labs Bolt T-Shirt
+Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product_list}</var>
+<arg>c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\sausedemo/../../configuration/saucedemo/localconfig/selectedProduct.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.428788" elapsed="0.001409"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-02-18T15:05:36.431197" level="INFO">3 lines returned</msg>
+<msg time="2025-02-18T15:05:36.431197" level="INFO">${product_list} = ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<var>${product_list}</var>
+<arg>${product_list}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.431197" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.431197" elapsed="0.000995"/>
+</kw>
+<msg time="2025-02-18T15:05:36.432192" level="INFO">${found_selected_product} = True</msg>
+<var>${found_selected_product}</var>
+<arg>List Should Contain Value</arg>
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.431197" elapsed="0.000995"/>
+</kw>
+<if>
+<branch type="IF" condition="${found_selected_product} == ${True}">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.443180" level="INFO">Waited for Element with selector xpath=//*[@data-test="add-to-cart"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.432192" elapsed="0.010988"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.444177" level="INFO">Clicks the element 'xpath=//*[@data-test="add-to-cart"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.444177" elapsed="0.019755"/>
+</kw>
+<arg>${btnAddtocartdetailpage}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.432192" elapsed="0.031740"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${add_product}</arg>
+<arg>${product_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.463932" elapsed="0.000995"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.471382" level="INFO">Waited for Element with selector xpath=//*[@data-test="back-to-products"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.464927" elapsed="0.007451"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.472880" level="INFO">Clicks the element 'xpath=//*[@data-test="back-to-products"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.472378" elapsed="0.028467"/>
+</kw>
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.464927" elapsed="0.036915"/>
+</kw>
+<status status="PASS" start="2025-02-18T15:05:36.432192" elapsed="0.069650"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.501842" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-18T15:05:36.501842" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-18T15:05:36.432192" elapsed="0.069650"/>
+</if>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-02-18T15:05:36.354670" elapsed="0.147172"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.502839" level="INFO">${i} = 4</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.502839" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.507330" level="INFO">Waited for Element with selector //*[@data-test="inventory-item"][4]/div[2]/div[1]/a/div at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.502839" elapsed="0.004491"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.507330" level="INFO">Clicks the element '//*[@data-test="inventory-item"][4]/div[2]/div[1]/a/div'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.507330" elapsed="0.029978"/>
+</kw>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/div[1]/a/div</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.502839" elapsed="0.034469"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.546126" level="INFO">Text: 'Sauce Labs Fleece Jacket'</msg>
+<msg time="2025-02-18T15:05:36.546126" level="INFO">${product_name} = Sauce Labs Fleece Jacket</msg>
+<var>${product_name}</var>
+<arg>${lblProductnamedetailpage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.537308" elapsed="0.008818"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-18T15:05:36.546126" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt"&gt;c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt&lt;/a&gt;'.</msg>
+<msg time="2025-02-18T15:05:36.547627" level="INFO">${product_list} = Sauce Labs Backpack
+Sauce Labs Bolt T-Shirt
+Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product_list}</var>
+<arg>c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\sausedemo/../../configuration/saucedemo/localconfig/selectedProduct.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.546126" elapsed="0.001501"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-02-18T15:05:36.547627" level="INFO">3 lines returned</msg>
+<msg time="2025-02-18T15:05:36.547627" level="INFO">${product_list} = ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<var>${product_list}</var>
+<arg>${product_list}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.547627" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="List Should Contain Value" owner="Collections">
+<msg time="2025-02-18T15:05:36.547627" level="FAIL">[ Sauce Labs Backpack | Sauce Labs Bolt T-Shirt | Test.allTheThings() T-Shirt (Red) ] does not contain value 'Sauce Labs Fleece Jacket'.</msg>
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="FAIL" start="2025-02-18T15:05:36.547627" elapsed="0.001014">[ Sauce Labs Backpack | Sauce Labs Bolt T-Shirt | Test.allTheThings() T-Shirt (Red) ] does not contain value 'Sauce Labs Fleece Jacket'.</status>
+</kw>
+<msg time="2025-02-18T15:05:36.548641" level="INFO">${found_selected_product} = False</msg>
+<var>${found_selected_product}</var>
+<arg>List Should Contain Value</arg>
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.547627" elapsed="0.001014"/>
+</kw>
+<if>
+<branch type="IF" condition="${found_selected_product} == ${True}">
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>${btnAddtocartdetailpage}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.548641" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${add_product}</arg>
+<arg>${product_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.548641" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.549640" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-18T15:05:36.548641" elapsed="0.000999"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.553630" level="INFO">Waited for Element with selector xpath=//*[@data-test="back-to-products"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.549640" elapsed="0.003990"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.553630" level="INFO">Clicks the element 'xpath=//*[@data-test="back-to-products"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.553630" elapsed="0.017881"/>
+</kw>
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.549640" elapsed="0.021871"/>
+</kw>
+<status status="PASS" start="2025-02-18T15:05:36.549640" elapsed="0.021871"/>
+</branch>
+<status status="PASS" start="2025-02-18T15:05:36.548641" elapsed="0.022870"/>
+</if>
+<var name="${i}">3</var>
+<status status="PASS" start="2025-02-18T15:05:36.502839" elapsed="0.068672"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.572508" level="INFO">${i} = 5</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.571511" elapsed="0.000997"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.575668" level="INFO">Waited for Element with selector //*[@data-test="inventory-item"][5]/div[2]/div[1]/a/div at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.572508" elapsed="0.003160"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.576672" level="INFO">Clicks the element '//*[@data-test="inventory-item"][5]/div[2]/div[1]/a/div'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.576672" elapsed="0.024371"/>
+</kw>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/div[1]/a/div</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.572508" elapsed="0.028535"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.609530" level="INFO">Text: 'Sauce Labs Onesie'</msg>
+<msg time="2025-02-18T15:05:36.610037" level="INFO">${product_name} = Sauce Labs Onesie</msg>
+<var>${product_name}</var>
+<arg>${lblProductnamedetailpage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.601043" elapsed="0.008994"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-18T15:05:36.610037" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt"&gt;c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt&lt;/a&gt;'.</msg>
+<msg time="2025-02-18T15:05:36.611039" level="INFO">${product_list} = Sauce Labs Backpack
+Sauce Labs Bolt T-Shirt
+Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product_list}</var>
+<arg>c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\sausedemo/../../configuration/saucedemo/localconfig/selectedProduct.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.610037" elapsed="0.001002"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-02-18T15:05:36.611039" level="INFO">3 lines returned</msg>
+<msg time="2025-02-18T15:05:36.611039" level="INFO">${product_list} = ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<var>${product_list}</var>
+<arg>${product_list}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.611039" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="List Should Contain Value" owner="Collections">
+<msg time="2025-02-18T15:05:36.611039" level="FAIL">[ Sauce Labs Backpack | Sauce Labs Bolt T-Shirt | Test.allTheThings() T-Shirt (Red) ] does not contain value 'Sauce Labs Onesie'.</msg>
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="FAIL" start="2025-02-18T15:05:36.611039" elapsed="0.000000">[ Sauce Labs Backpack | Sauce Labs Bolt T-Shirt | Test.allTheThings() T-Shirt (Red) ] does not contain value 'Sauce Labs Onesie'.</status>
+</kw>
+<msg time="2025-02-18T15:05:36.611039" level="INFO">${found_selected_product} = False</msg>
+<var>${found_selected_product}</var>
+<arg>List Should Contain Value</arg>
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.611039" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${found_selected_product} == ${True}">
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>${btnAddtocartdetailpage}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.612036" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${add_product}</arg>
+<arg>${product_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.612036" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.612036" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-18T15:05:36.611039" elapsed="0.000997"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.615025" level="INFO">Waited for Element with selector xpath=//*[@data-test="back-to-products"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.612036" elapsed="0.002989"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.616022" level="INFO">Clicks the element 'xpath=//*[@data-test="back-to-products"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.615025" elapsed="0.019644"/>
+</kw>
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.612036" elapsed="0.023628"/>
+</kw>
+<status status="PASS" start="2025-02-18T15:05:36.612036" elapsed="0.023735"/>
+</branch>
+<status status="PASS" start="2025-02-18T15:05:36.611039" elapsed="0.024732"/>
+</if>
+<var name="${i}">4</var>
+<status status="PASS" start="2025-02-18T15:05:36.571511" elapsed="0.064260"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.636274" level="INFO">${i} = 6</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.636274" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.641300" level="INFO">Waited for Element with selector //*[@data-test="inventory-item"][6]/div[2]/div[1]/a/div at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.637275" elapsed="0.004025"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.641300" level="INFO">Clicks the element '//*[@data-test="inventory-item"][6]/div[2]/div[1]/a/div'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.641300" elapsed="0.018756"/>
+</kw>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/div[1]/a/div</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.636274" elapsed="0.023782"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.672730" level="INFO">Text: 'Test.allTheThings() T-Shirt (Red)'</msg>
+<msg time="2025-02-18T15:05:36.672730" level="INFO">${product_name} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product_name}</var>
+<arg>${lblProductnamedetailpage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.661059" elapsed="0.011671"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-18T15:05:36.673740" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt"&gt;c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\selectedProduct.txt&lt;/a&gt;'.</msg>
+<msg time="2025-02-18T15:05:36.673740" level="INFO">${product_list} = Sauce Labs Backpack
+Sauce Labs Bolt T-Shirt
+Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product_list}</var>
+<arg>c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\sausedemo/../../configuration/saucedemo/localconfig/selectedProduct.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.672730" elapsed="0.001010"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-02-18T15:05:36.673740" level="INFO">3 lines returned</msg>
+<msg time="2025-02-18T15:05:36.673740" level="INFO">${product_list} = ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<var>${product_list}</var>
+<arg>${product_list}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.673740" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.673740" elapsed="0.000996"/>
+</kw>
+<msg time="2025-02-18T15:05:36.674736" level="INFO">${found_selected_product} = True</msg>
+<var>${found_selected_product}</var>
+<arg>List Should Contain Value</arg>
+<arg>${product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.673740" elapsed="0.000996"/>
+</kw>
+<if>
+<branch type="IF" condition="${found_selected_product} == ${True}">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.677751" level="INFO">Waited for Element with selector xpath=//*[@data-test="add-to-cart"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.675240" elapsed="0.002511"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.678751" level="INFO">Clicks the element 'xpath=//*[@data-test="add-to-cart"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.678751" elapsed="0.019669"/>
+</kw>
+<arg>${btnAddtocartdetailpage}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.674736" elapsed="0.023951"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${add_product}</arg>
+<arg>${product_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.699191" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.703189" level="INFO">Waited for Element with selector xpath=//*[@data-test="back-to-products"] at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.700200" elapsed="0.002989"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.704185" level="INFO">Clicks the element 'xpath=//*[@data-test="back-to-products"]'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.703189" elapsed="0.031803"/>
+</kw>
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.699191" elapsed="0.035801"/>
+</kw>
+<status status="PASS" start="2025-02-18T15:05:36.674736" elapsed="0.060256"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>${btnBackToProducts}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.735988" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-18T15:05:36.734992" elapsed="0.000996"/>
+</branch>
+<status status="PASS" start="2025-02-18T15:05:36.674736" elapsed="0.061252"/>
+</if>
+<var name="${i}">5</var>
+<status status="PASS" start="2025-02-18T15:05:36.636274" elapsed="0.099714"/>
+</iter>
+<var>${i}</var>
+<value>${index}</value>
+<status status="PASS" start="2025-02-18T15:05:36.073233" elapsed="0.662755"/>
+</for>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.735988" level="INFO">${ADD_PRODUCT} = ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<arg>${ADD_PRODUCT}</arg>
+<arg>${add_product}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.735988" elapsed="0.000000"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+Keyword for select product that contain T-Shirt, Backpack and Flashlight in product name and click add to cart</doc>
+<status status="PASS" start="2025-02-18T15:05:36.068735" elapsed="0.667253"/>
+</kw>
+<kw name="Go To Shopping Cart Page" owner="saucedemo_keyword">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.741993" level="INFO">Waited for Element with selector data-test=shopping-cart-link at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.737494" elapsed="0.004499"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.742992" level="INFO">Clicks the element 'data-test=shopping-cart-link'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.741993" elapsed="0.019432"/>
+</kw>
+<arg>${btnShoppingcart}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.737494" elapsed="0.024944"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.768430" level="INFO">Waited for Element with selector data-test=title at state visible</msg>
+<arg>${lblTitlecartpage}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.762438" elapsed="0.005992"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.777525" level="INFO">Text: 'Your Cart'</msg>
+<msg time="2025-02-18T15:05:36.777525" level="INFO">${checkout_title} = Your Cart</msg>
+<var>${checkout_title}</var>
+<arg>${lblTitlecartpage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.768430" elapsed="0.009095"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${checkout_title}</arg>
+<arg>Your Cart</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.777525" elapsed="0.001014"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+Keyword for go to shopping cart page and verify title</doc>
+<status status="PASS" start="2025-02-18T15:05:36.737494" elapsed="0.041045"/>
+</kw>
+<kw name="Verify Product In Cart Equal Selected Product" owner="saucedemo_keyword">
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-02-18T15:05:36.783526" level="INFO">${count_product_in_cart} = 3</msg>
+<var>${count_product_in_cart}</var>
+<arg>${lblProductNameCartPage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.779536" elapsed="0.003990"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.783526" level="INFO">${added_product} = []</msg>
+<var>${added_product}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.783526" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.784522" level="INFO">${i} = 1</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.784522" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.795159" level="INFO">Text: 'Sauce Labs Backpack'</msg>
+<msg time="2025-02-18T15:05:36.795159" level="INFO">${product} = Sauce Labs Backpack</msg>
+<var>${product}</var>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.784522" elapsed="0.010637"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${added_product}</arg>
+<arg>${product}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.796166" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-18T15:05:36.783526" elapsed="0.012640"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.796166" level="INFO">${i} = 2</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.796166" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.805675" level="INFO">Text: 'Sauce Labs Bolt T-Shirt'</msg>
+<msg time="2025-02-18T15:05:36.805675" level="INFO">${product} = Sauce Labs Bolt T-Shirt</msg>
+<var>${product}</var>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.796166" elapsed="0.009509"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${added_product}</arg>
+<arg>${product}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.805675" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-02-18T15:05:36.796166" elapsed="0.009509"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.805675" level="INFO">${i} = 3</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.805675" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.815799" level="INFO">Text: 'Test.allTheThings() T-Shirt (Red)'</msg>
+<msg time="2025-02-18T15:05:36.817304" level="INFO">${product} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product}</var>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.807178" elapsed="0.010126"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${added_product}</arg>
+<arg>${product}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.817304" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-02-18T15:05:36.805675" elapsed="0.011629"/>
+</iter>
+<var>${i}</var>
+<value>${count_product_in_cart}</value>
+<status status="PASS" start="2025-02-18T15:05:36.783526" elapsed="0.033778"/>
+</for>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.818311" level="INFO">Length is 3.</msg>
+<msg time="2025-02-18T15:05:36.818311" level="INFO">${count_added_product} = 3</msg>
+<var>${count_added_product}</var>
+<arg>${added_product}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.817304" elapsed="0.001007"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.818311" level="INFO">Length is 3.</msg>
+<msg time="2025-02-18T15:05:36.818311" level="INFO">${count_add_product} = 3</msg>
+<var>${count_add_product}</var>
+<arg>${ADD_PRODUCT}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.818311" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${count_added_product}</arg>
+<arg>${count_add_product}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.818311" elapsed="0.000000"/>
+</kw>
+<msg time="2025-02-18T15:05:36.818311" level="INFO">${equal_status} = True</msg>
+<var>${equal_status}</var>
+<arg>Should Be Equal</arg>
+<arg>${count_added_product}</arg>
+<arg>${count_add_product}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.818311" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${equal_status} == ${False}</arg>
+<arg>Fail</arg>
+<arg>Product In Cart Not Equal Selected Product</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.818311" elapsed="0.000995"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${added_product}[${i}]</arg>
+<arg>${ADD_PRODUCT}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.819306" elapsed="0.000000"/>
+</kw>
+<msg time="2025-02-18T15:05:36.819306" level="INFO">${product_correct} = True</msg>
+<var>${product_correct}</var>
+<arg>Should Be Equal</arg>
+<arg>${added_product}[${i}]</arg>
+<arg>${ADD_PRODUCT}[${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.819306" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${product_correct} == ${False}</arg>
+<arg>Fail</arg>
+<arg>Product In Cart Not Correct As Selected Product</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.819306" elapsed="0.000998"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-18T15:05:36.819306" elapsed="0.000998"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${added_product}[${i}]</arg>
+<arg>${ADD_PRODUCT}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.820304" elapsed="0.000000"/>
+</kw>
+<msg time="2025-02-18T15:05:36.820304" level="INFO">${product_correct} = True</msg>
+<var>${product_correct}</var>
+<arg>Should Be Equal</arg>
+<arg>${added_product}[${i}]</arg>
+<arg>${ADD_PRODUCT}[${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.820304" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${product_correct} == ${False}</arg>
+<arg>Fail</arg>
+<arg>Product In Cart Not Correct As Selected Product</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.820304" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-02-18T15:05:36.820304" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${added_product}[${i}]</arg>
+<arg>${ADD_PRODUCT}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.821300" elapsed="0.000000"/>
+</kw>
+<msg time="2025-02-18T15:05:36.821300" level="INFO">${product_correct} = True</msg>
+<var>${product_correct}</var>
+<arg>Should Be Equal</arg>
+<arg>${added_product}[${i}]</arg>
+<arg>${ADD_PRODUCT}[${i}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.820304" elapsed="0.000996"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${product_correct} == ${False}</arg>
+<arg>Fail</arg>
+<arg>Product In Cart Not Correct As Selected Product</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.821300" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-02-18T15:05:36.820304" elapsed="0.000996"/>
+</iter>
+<var>${i}</var>
+<value>${count_added_product}</value>
+<status status="PASS" start="2025-02-18T15:05:36.819306" elapsed="0.001994"/>
+</for>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.821300" level="INFO">${ADDED_PRODUCT} = ['Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<arg>${ADDED_PRODUCT}</arg>
+<arg>${added_product}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.821300" elapsed="0.000000"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+Keyword for verify product in cart equal selected product by amount of product and product name</doc>
+<status status="PASS" start="2025-02-18T15:05:36.778539" elapsed="0.042761"/>
+</kw>
+<kw name="Remove Selected Product From Shopping Cart" owner="saucedemo_keyword">
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-02-18T15:05:36.826572" level="INFO">${index} = 3</msg>
+<var>${index}</var>
+<arg>${lblProductNameCartPage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.822297" elapsed="0.004275"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.827568" level="INFO">${i} = 0</msg>
+<var>${i}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.827568" elapsed="0.000000"/>
+</kw>
+<while condition="${i} &lt; ${index}">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.828073" level="INFO">${current_index} = 1</msg>
+<var>${current_index}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.828073" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.836053" level="INFO">Text: 'Sauce Labs Backpack'</msg>
+<msg time="2025-02-18T15:05:36.836053" level="INFO">${product_name} = Sauce Labs Backpack</msg>
+<var>${product_name}</var>
+<arg>//*[@data-test="inventory-item"][${current_index}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.828073" elapsed="0.007980"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-18T15:05:36.836053" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\removeProduct.txt"&gt;c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\removeProduct.txt&lt;/a&gt;'.</msg>
+<msg time="2025-02-18T15:05:36.836053" level="INFO">${remove_product_list} = Sauce Labs Backpack</msg>
+<var>${remove_product_list}</var>
+<arg>c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\sausedemo/../../configuration/saucedemo/localconfig/removeProduct.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.836053" elapsed="0.000000"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-02-18T15:05:36.836053" level="INFO">1 lines returned</msg>
+<msg time="2025-02-18T15:05:36.836053" level="INFO">${remove_product_list} = ['Sauce Labs Backpack']</msg>
+<var>${remove_product_list}</var>
+<arg>${remove_product_list}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.836053" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${remove_product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.837671" elapsed="0.000000"/>
+</kw>
+<msg time="2025-02-18T15:05:36.838178" level="INFO">${found_selected_product} = True</msg>
+<var>${found_selected_product}</var>
+<arg>List Should Contain Value</arg>
+<arg>${remove_product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.836053" elapsed="0.002125"/>
+</kw>
+<if>
+<branch type="IF" condition="${found_selected_product}">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.842719" level="INFO">Waited for Element with selector //*[@data-test="inventory-item"][1]/div[2]/div[2]/button at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.838725" elapsed="0.003994"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.843715" level="INFO">Clicks the element '//*[@data-test="inventory-item"][1]/div[2]/div[2]/button'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.843715" elapsed="0.019044"/>
+</kw>
+<arg>//*[@data-test="inventory-item"][${current_index}]/div[2]/div[2]/button</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.838178" elapsed="0.024581"/>
+</kw>
+<kw name="Remove Item By Value" owner="saucedemo_keyword">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.863756" level="INFO">${index} = 0</msg>
+<var>${index}</var>
+<arg>${list}.index("${value}")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.863756" elapsed="0.000000"/>
+</kw>
+<kw name="Remove From List" owner="Collections">
+<arg>${list}</arg>
+<arg>${index}</arg>
+<doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.863756" elapsed="0.000996"/>
+</kw>
+<arg>${ADDED_PRODUCT}</arg>
+<arg>${product_name}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.862759" elapsed="0.001993"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.864752" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${index}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.864752" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.864752" level="INFO">${i} = 0</msg>
+<var>${i}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.864752" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-18T15:05:36.838178" elapsed="0.026574"/>
+</branch>
+<branch type="ELSE">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.864752" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-18T15:05:36.864752" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-18T15:05:36.838178" elapsed="0.026574"/>
+</if>
+<status status="PASS" start="2025-02-18T15:05:36.828073" elapsed="0.036679"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.865749" level="INFO">${current_index} = 1</msg>
+<var>${current_index}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.865749" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.874863" level="INFO">Text: 'Sauce Labs Bolt T-Shirt'</msg>
+<msg time="2025-02-18T15:05:36.875366" level="INFO">${product_name} = Sauce Labs Bolt T-Shirt</msg>
+<var>${product_name}</var>
+<arg>//*[@data-test="inventory-item"][${current_index}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.865749" elapsed="0.009617"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-18T15:05:36.875366" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\removeProduct.txt"&gt;c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\removeProduct.txt&lt;/a&gt;'.</msg>
+<msg time="2025-02-18T15:05:36.875366" level="INFO">${remove_product_list} = Sauce Labs Backpack</msg>
+<var>${remove_product_list}</var>
+<arg>c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\sausedemo/../../configuration/saucedemo/localconfig/removeProduct.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.875366" elapsed="0.000000"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-02-18T15:05:36.876373" level="INFO">1 lines returned</msg>
+<msg time="2025-02-18T15:05:36.876373" level="INFO">${remove_product_list} = ['Sauce Labs Backpack']</msg>
+<var>${remove_product_list}</var>
+<arg>${remove_product_list}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.875366" elapsed="0.001007"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="List Should Contain Value" owner="Collections">
+<msg time="2025-02-18T15:05:36.876373" level="FAIL">[ Sauce Labs Backpack ] does not contain value 'Sauce Labs Bolt T-Shirt'.</msg>
+<arg>${remove_product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="FAIL" start="2025-02-18T15:05:36.876373" elapsed="0.000000">[ Sauce Labs Backpack ] does not contain value 'Sauce Labs Bolt T-Shirt'.</status>
+</kw>
+<msg time="2025-02-18T15:05:36.876373" level="INFO">${found_selected_product} = False</msg>
+<var>${found_selected_product}</var>
+<arg>List Should Contain Value</arg>
+<arg>${remove_product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.876373" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${found_selected_product}">
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>//*[@data-test="inventory-item"][${current_index}]/div[2]/div[2]/button</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.877368" elapsed="0.000000"/>
+</kw>
+<kw name="Remove Item By Value" owner="saucedemo_keyword">
+<arg>${ADDED_PRODUCT}</arg>
+<arg>${product_name}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.877368" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${index}</var>
+<arg>${index}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.877368" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${i}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.877368" elapsed="0.000506"/>
+</kw>
+<status status="NOT RUN" start="2025-02-18T15:05:36.876373" elapsed="0.001501"/>
+</branch>
+<branch type="ELSE">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.877874" level="INFO">${i} = 1</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.877874" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-18T15:05:36.877874" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-18T15:05:36.876373" elapsed="0.001501"/>
+</if>
+<status status="PASS" start="2025-02-18T15:05:36.865749" elapsed="0.012125"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.877874" level="INFO">${current_index} = 2</msg>
+<var>${current_index}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.877874" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.886586" level="INFO">Text: 'Test.allTheThings() T-Shirt (Red)'</msg>
+<msg time="2025-02-18T15:05:36.886586" level="INFO">${product_name} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product_name}</var>
+<arg>//*[@data-test="inventory-item"][${current_index}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.877874" elapsed="0.008712"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-18T15:05:36.887582" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\removeProduct.txt"&gt;c:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\configuration\saucedemo\localconfig\removeProduct.txt&lt;/a&gt;'.</msg>
+<msg time="2025-02-18T15:05:36.887582" level="INFO">${remove_product_list} = Sauce Labs Backpack</msg>
+<var>${remove_product_list}</var>
+<arg>c:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\sausedemo/../../configuration/saucedemo/localconfig/removeProduct.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.886586" elapsed="0.000996"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-02-18T15:05:36.888087" level="INFO">1 lines returned</msg>
+<msg time="2025-02-18T15:05:36.888087" level="INFO">${remove_product_list} = ['Sauce Labs Backpack']</msg>
+<var>${remove_product_list}</var>
+<arg>${remove_product_list}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.887582" elapsed="0.000505"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="List Should Contain Value" owner="Collections">
+<msg time="2025-02-18T15:05:36.888087" level="FAIL">[ Sauce Labs Backpack ] does not contain value 'Test.allTheThings() T-Shirt (Red)'.</msg>
+<arg>${remove_product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="FAIL" start="2025-02-18T15:05:36.888087" elapsed="0.000000">[ Sauce Labs Backpack ] does not contain value 'Test.allTheThings() T-Shirt (Red)'.</status>
+</kw>
+<msg time="2025-02-18T15:05:36.888087" level="INFO">${found_selected_product} = False</msg>
+<var>${found_selected_product}</var>
+<arg>List Should Contain Value</arg>
+<arg>${remove_product_list}</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.888087" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${found_selected_product}">
+<kw name="Click Element" owner="saucedemo_keyword">
+<arg>//*[@data-test="inventory-item"][${current_index}]/div[2]/div[2]/button</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.888087" elapsed="0.001000"/>
+</kw>
+<kw name="Remove Item By Value" owner="saucedemo_keyword">
+<arg>${ADDED_PRODUCT}</arg>
+<arg>${product_name}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.889087" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${index}</var>
+<arg>${index}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.889087" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${i}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-18T15:05:36.889087" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-18T15:05:36.888087" elapsed="0.001504"/>
+</branch>
+<branch type="ELSE">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.889591" level="INFO">${i} = 2</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.889591" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-18T15:05:36.889591" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-18T15:05:36.888087" elapsed="0.001504"/>
+</if>
+<status status="PASS" start="2025-02-18T15:05:36.877874" elapsed="0.011717"/>
+</iter>
+<status status="PASS" start="2025-02-18T15:05:36.828073" elapsed="0.061518"/>
+</while>
+<doc>Owner: supasete.1998@gmail.com
+Keyword for remove selected product from shopping cart by product name contain selected name</doc>
+<status status="PASS" start="2025-02-18T15:05:36.822297" elapsed="0.067294"/>
+</kw>
+<kw name="Verify Product In Shopping Cart After Remove Selected Product" owner="saucedemo_keyword">
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-02-18T15:05:36.894579" level="INFO">${count_product_after_remove} = 2</msg>
+<var>${count_product_after_remove}</var>
+<arg>${lblProductNameCartPage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.890593" elapsed="0.003986"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.895574" level="INFO">${index} = 0</msg>
+<var>${index}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.894579" elapsed="0.000995"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.895574" level="INFO">${i} = 1</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.895574" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.904774" level="INFO">Text: 'Sauce Labs Bolt T-Shirt'</msg>
+<msg time="2025-02-18T15:05:36.904774" level="INFO">${remain_product} = Sauce Labs Bolt T-Shirt</msg>
+<var>${remain_product}</var>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.895574" elapsed="0.009200"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ADDED_PRODUCT}[${index}]</arg>
+<arg>${remain_product}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.904774" elapsed="0.000996"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.905770" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.905770" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-18T15:05:36.895574" elapsed="0.010196"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.907275" level="INFO">${i} = 2</msg>
+<var>${i}</var>
+<arg>${i}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.905770" elapsed="0.001505"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.914945" level="INFO">Text: 'Test.allTheThings() T-Shirt (Red)'</msg>
+<msg time="2025-02-18T15:05:36.915448" level="INFO">${remain_product} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${remain_product}</var>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.907275" elapsed="0.008173"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ADDED_PRODUCT}[${index}]</arg>
+<arg>${remain_product}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.915448" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:36.916456" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.915448" elapsed="0.001008"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-02-18T15:05:36.905770" elapsed="0.010686"/>
+</iter>
+<var>${i}</var>
+<value>${count_product_after_remove}</value>
+<status status="PASS" start="2025-02-18T15:05:36.895574" elapsed="0.020882"/>
+</for>
+<doc>Owner: supasete.1998@gmail.com
+Keyword for verify product in cart equal selected product by product name</doc>
+<status status="PASS" start="2025-02-18T15:05:36.890593" elapsed="0.025863"/>
+</kw>
+<kw name="Go To Checkout Page" owner="saucedemo_keyword">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.920959" level="INFO">Waited for Element with selector data-test=checkout at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.917454" elapsed="0.003505"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:36.920959" level="INFO">Clicks the element 'data-test=checkout'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.920959" elapsed="0.020607"/>
+</kw>
+<arg>${btnCheckout}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.916456" elapsed="0.025110"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.945550" level="INFO">Waited for Element with selector data-test=title at state visible</msg>
+<arg>${lblTitleCheckoutPage}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.941566" elapsed="0.004176"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.954147" level="INFO">Text: 'Checkout: Your Information'</msg>
+<msg time="2025-02-18T15:05:36.954147" level="INFO">${checkout_title} = Checkout: Your Information</msg>
+<var>${checkout_title}</var>
+<arg>${lblTitleCheckoutPage}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.945742" elapsed="0.008405"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${checkout_title}</arg>
+<arg>Checkout: Your Information</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.954147" elapsed="0.000000"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.916456" elapsed="0.037691"/>
+</kw>
+<kw name="Fill Personal Information And Click Continue" owner="saucedemo_keyword">
+<kw name="Input Text" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.964899" level="INFO">Waited for Element with selector data-test=firstName at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.956644" elapsed="0.008255"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.965898" level="INFO">Fills the text 'Supasete' in the given field.</msg>
+<arg>${selector}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.965898" elapsed="0.011194"/>
+</kw>
+<arg>${lblFirstName}</arg>
+<arg>${first_name}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.956141" elapsed="0.021454"/>
+</kw>
+<kw name="Input Text" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:36.982597" level="INFO">Waited for Element with selector data-test=lastName at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.978613" elapsed="0.003984"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-02-18T15:05:36.983594" level="INFO">Fills the text 'Sgoolreungsri' in the given field.</msg>
+<arg>${selector}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.982597" elapsed="0.013495"/>
+</kw>
+<arg>${lblLastName}</arg>
+<arg>${last_name}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.977595" elapsed="0.018497"/>
+</kw>
+<kw name="Input Text" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:37.005611" level="INFO">Waited for Element with selector data-test=postalCode at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:36.998632" elapsed="0.006979"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-02-18T15:05:37.006607" level="INFO">Fills the text '21000' in the given field.</msg>
+<arg>${selector}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.005611" elapsed="0.014034"/>
+</kw>
+<arg>${lblPostalCode}</arg>
+<arg>${postal_code}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:36.996092" elapsed="0.023553"/>
+</kw>
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:37.031807" level="INFO">Waited for Element with selector data-test=continue at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.020642" elapsed="0.011165"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:37.032803" level="INFO">Clicks the element 'data-test=continue'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.031807" elapsed="0.022475"/>
+</kw>
+<arg>${btnContinue}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:37.019645" elapsed="0.034637"/>
+</kw>
+<arg>${name}</arg>
+<arg>${last_name}</arg>
+<arg>${postal_code}</arg>
+<doc>Owner: supasete.1998@gmail.com
+${first_name} : Input first name
+Sgoolreungsri : Input last name
+21000 : Input postal code</doc>
+<status status="PASS" start="2025-02-18T15:05:36.955144" elapsed="0.099138"/>
+</kw>
+<kw name="Verify Product And Product Price In Checkout Page" owner="saucedemo_keyword">
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.055785" level="INFO">Length is 2.</msg>
+<msg time="2025-02-18T15:05:37.055785" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${ADDED_PRODUCT}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.055785" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.057293" level="INFO">${product_no} = 0</msg>
+<var>${product_no}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.055785" elapsed="0.001508"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.057293" level="INFO">${amount_product_price} = 0.0</msg>
+<var>${amount_product_price}</var>
+<arg>0.0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.057293" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.058308" level="INFO">${i} = 1</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.057293" elapsed="0.001015"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:37.067320" level="INFO">Text: 'Sauce Labs Bolt T-Shirt'</msg>
+<msg time="2025-02-18T15:05:37.067320" level="INFO">${product_name} = Sauce Labs Bolt T-Shirt</msg>
+<var>${product_name}</var>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.058308" elapsed="0.009012"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:37.076453" level="INFO">Text: '$15.99'</msg>
+<msg time="2025-02-18T15:05:37.076453" level="INFO">${product_price} = $15.99</msg>
+<var>${product_price}</var>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/div[2]/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.067320" elapsed="0.009133"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.077952" level="INFO">${product_price_decimal} = 15.99</msg>
+<var>${product_price_decimal}</var>
+<arg>float(${product_price.replace('$', '')})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.077450" elapsed="0.000502"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.077952" level="INFO">${amount_product_price} = 15.99</msg>
+<var>${amount_product_price}</var>
+<arg>${amount_product_price} + ${product_price_decimal}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.077952" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ADDED_PRODUCT}[${product_no}]</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.078950" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.078950" level="INFO">${product_no} = 1</msg>
+<var>${product_no}</var>
+<arg>${product_no} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.078950" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-18T15:05:37.057293" elapsed="0.021657"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.078950" level="INFO">${i} = 2</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.078950" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:37.089128" level="INFO">Text: 'Test.allTheThings() T-Shirt (Red)'</msg>
+<msg time="2025-02-18T15:05:37.089128" level="INFO">${product_name} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${product_name}</var>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/a/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.078950" elapsed="0.010178"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:37.103373" level="INFO">Text: '$15.99'</msg>
+<msg time="2025-02-18T15:05:37.103373" level="INFO">${product_price} = $15.99</msg>
+<var>${product_price}</var>
+<arg>//*[@data-test="inventory-item"][${i}]/div[2]/div[2]/div</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.089128" elapsed="0.014245"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.104368" level="INFO">${product_price_decimal} = 15.99</msg>
+<var>${product_price_decimal}</var>
+<arg>float(${product_price.replace('$', '')})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.104368" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.105365" level="INFO">${amount_product_price} = 31.98</msg>
+<var>${amount_product_price}</var>
+<arg>${amount_product_price} + ${product_price_decimal}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.104368" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ADDED_PRODUCT}[${product_no}]</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.105365" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.105365" level="INFO">${product_no} = 2</msg>
+<var>${product_no}</var>
+<arg>${product_no} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.105365" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-02-18T15:05:37.078950" elapsed="0.026415"/>
+</iter>
+<var>${i}</var>
+<value>${index}</value>
+<status status="PASS" start="2025-02-18T15:05:37.057293" elapsed="0.048072"/>
+</for>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.106362" level="INFO">${AMOUNT_PRODUCT_PRICE} = 31.98</msg>
+<arg>${AMOUNT_PRODUCT_PRICE}</arg>
+<arg>${amount_product_price}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.106362" elapsed="0.000000"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+Keyword for verify product and product price in checkout page by amount of product and product price</doc>
+<status status="PASS" start="2025-02-18T15:05:37.055785" elapsed="0.050577"/>
+</kw>
+<kw name="Verify Price Total In Checkout Page" owner="saucedemo_keyword">
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:37.117260" level="INFO">Text: 'Item total: $31.98'</msg>
+<msg time="2025-02-18T15:05:37.118267" level="INFO">${actual_product_price} = Item total: $31.98</msg>
+<var>${actual_product_price}</var>
+<arg>${lblItemTotal}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.107358" elapsed="0.010909"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.118267" level="INFO">${actual_product_price} = 31.98</msg>
+<var>${actual_product_price}</var>
+<arg>float(${actual_product_price.replace('Item total: $', '')})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.118267" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_product_price}</arg>
+<arg>${AMOUNT_PRODUCT_PRICE}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.119262" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.119262" level="INFO">${tax_amount} = 2.5584000000000002</msg>
+<var>${tax_amount}</var>
+<arg>${AMOUNT_PRODUCT_PRICE} * 8/100</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.119262" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.119262" level="INFO">${tax_amount_decimal} = 2.56</msg>
+<var>${tax_amount_decimal}</var>
+<arg>float("%.2f" % ${tax_amount})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.119262" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:37.127781" level="INFO">Text: 'Tax: $2.56'</msg>
+<msg time="2025-02-18T15:05:37.128781" level="INFO">${actual_tax} = Tax: $2.56</msg>
+<var>${actual_tax}</var>
+<arg>${lblTax}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.119262" elapsed="0.009519"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.128781" level="INFO">${actual_tax} = 2.56</msg>
+<var>${actual_tax}</var>
+<arg>float(${actual_tax.replace('Tax: $', '')})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.128781" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_tax}</arg>
+<arg>${tax_amount_decimal}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.129779" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.129779" level="INFO">${total_price} = 34.5384</msg>
+<var>${total_price}</var>
+<arg>${AMOUNT_PRODUCT_PRICE} + ${tax_amount}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.129779" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.129779" level="INFO">${total_price_decimal} = 34.54</msg>
+<var>${total_price_decimal}</var>
+<arg>float("%.2f" % ${total_price})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.129779" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:37.142150" level="INFO">Text: 'Total: $34.54'</msg>
+<msg time="2025-02-18T15:05:37.142150" level="INFO">${actual_total} = Total: $34.54</msg>
+<var>${actual_total}</var>
+<arg>${lblTotal}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.129779" elapsed="0.012371"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-18T15:05:37.143148" level="INFO">${actual_total_decimal} = 34.54</msg>
+<var>${actual_total_decimal}</var>
+<arg>float(${actual_total.replace('Total: $', '')})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.142150" elapsed="0.000998"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_total_decimal}</arg>
+<arg>${total_price_decimal}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.143148" elapsed="0.000000"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+Keyword for verify product total price, tax and total price in checkout page</doc>
+<status status="PASS" start="2025-02-18T15:05:37.106362" elapsed="0.036786"/>
+</kw>
+<kw name="Finish Order" owner="saucedemo_keyword">
+<kw name="Click Element" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:37.147361" level="INFO">Waited for Element with selector data-test=finish at state visible</msg>
+<arg>${selector}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.144143" elapsed="0.003218"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-02-18T15:05:37.148369" level="INFO">Clicks the element 'data-test=finish'.</msg>
+<arg>${selector}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.147361" elapsed="0.021148"/>
+</kw>
+<arg>${btnFinish}</arg>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:37.144143" elapsed="0.024366"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T15:05:37.143148" elapsed="0.025361"/>
+</kw>
+<kw name="Verify Order Complete Page" owner="saucedemo_keyword">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-02-18T15:05:37.173010" level="INFO">Waited for Element with selector xpath=//*[@id="checkout_complete_container"]/h2 at state visible</msg>
+<arg>${lblOrderComplete}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.169517" elapsed="0.003493"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-02-18T15:05:37.182197" level="INFO">Text: 'Thank you for your order!'</msg>
+<msg time="2025-02-18T15:05:37.183193" level="INFO">${complete_order_text} = Thank you for your order!</msg>
+<var>${complete_order_text}</var>
+<arg>${lblOrderComplete}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.173010" elapsed="0.010183"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${complete_order_text}</arg>
+<arg>Thank you for your order!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-18T15:05:37.183193" elapsed="0.000000"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+Keyword for verify order complete page</doc>
+<status status="PASS" start="2025-02-18T15:05:37.168509" elapsed="0.014684"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+*** Description ***
+ตรวจสอบการสั่งซื้อสินค้าและการทำงานบนเว็บไซต์ saucedemo
+==&gt;
+*** Test Steps ***
+1. เข้าสู่หน้าเว็บ saucedemo และทำการ login ด้วย username/password ตัวอย่างที่เว็บไซต์จัดเตรียมไว้ให้
+2. เลือกหาซื้อสินค้า T-Shirt, Flashlight และ Backpack หากพบสินค้าเหล่านี้ ให้คลิกปุ่ม Add to cart เพื่อหยิบใส่รถเข็น
+โดยต้องเลือกดูสินค้าให้ครบทุกตัว หากไม่พบสินค้า โปรแกรมจะดำเนินการต่อ ไปยังขั้นตอนถัดไป แต่ต้องบันทึกในผลการทดสอบ (test result)
+3. ลูกค้าตัดสินใจคืนสินค้า Backpack โดยคลิกปุ่ม Remove จากนั้นตรวจสอบสินค้าในตะกร้า หากถูกต้องครบถ้วน
+ให้คลิกปุ่ม Checkout เพื่อดำเนินการชำระเงิน หากพบสินค้าที่ไม่ต้องการ ให้คลิกปุ่ม Remove เพื่อลบออก
+4. กรอกข้อมูลผู้สั่งซื้อ จากนั้นกดปุ่ม Continue เพื่อดำเนินการต่อ
+5. ตรวจสอบรายการสินค้าครั้งสุดท้าย และราคารวมว่าถูกต้องทั้งหมดหรือไม่ โดยสินค้ามีการคิดภาษีอยู่ที่ 8% ของราคารวมของสินค้า
+6. หากการสั่งซื้อสำเร็จ จะต้องปรากฏหน้าจอ Thank you for your order!
+7. แสดง log หรือบันทึกการทำงานของโปรแกรม automate ที่เกิดขึ้น สามารถแสดงในรูปแบบ text file, Json หรือชุด text ที่เป็น test result
+==&gt;
+*** Expect Result ***
+1. โปรแกรม test สามารถค้นหาสินค้าที่เป็น “T-Shirt” ได้ถูกต้อง และหยิบใส่ตะกร้ารถเข็น
+2. โปรแกรม test สามารถคำนวณราคารวมของสินค้าและภาษีได้ถูกต้อง
+3. โปรแกรม test สามารถดำเนินการสั่งซื้อสำเร็จ
+==&gt;</doc>
+<tag>e2e</tag>
+<status status="PASS" start="2025-02-18T15:05:34.509548" elapsed="2.673645"/>
+</test>
+<status status="PASS" start="2025-02-18T15:05:34.374861" elapsed="2.872623"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">e2e</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="E2E Saucedemo">E2E Saucedemo</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-18T15:05:34.519750" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+</errors>
+</robot>

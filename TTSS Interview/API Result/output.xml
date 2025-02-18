@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.11.1 on win32)" generated="2025-02-18T14:01:18.845013" rpa="false" schemaversion="5">
+<suite id="s1" name="Api Reqres" source="C:\Users\Win 10 Pro\Desktop\Automate\TTSS Interview\tests\api\api_reqres.robot">
+<test id="s1-t1" name="Verify Create User Success" line="6">
+<kw name="Create User" owner="reqres_keyword">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-02-18T14:01:18.977917" level="INFO">${create_user} = {'name': 'morpheus', 'job': 'leader'}</msg>
+<var>${create_user}</var>
+<arg>C:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\reqres/../../resources/reqres/schema/create_user.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-02-18T14:01:18.977917" elapsed="0.000000"/>
+</kw>
+<kw name="Call API" owner="reqres_keyword">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-02-18T14:01:18.978914" level="INFO">Creating Session using : alias=create_session, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>create_session</arg>
+<arg>${base_url}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-02-18T14:01:18.978914" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${method}&quot; == &quot;${GET}&quot;">
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:18.978914" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:18.978914" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:18.978914" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${POST}&quot;">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-02-18T14:01:19.503712" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '37', 'Content-Type': 'application/json'} 
+ body=b'{"name": "morpheus", "job": "leader"}' 
+ </msg>
+<msg time="2025-02-18T14:01:19.503712" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 18 Feb 2025 07:01:20 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '84', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1739862079&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=FDPZgfkaIll1paTk0JVoP31q%2B0k%2FIJs56TtywAZhqsw%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1739862079&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=FDPZgfkaIll1paTk0JVoP31q%2B0k%2FIJs56TtywAZhqsw%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"54-NBCdhPV4mIOkLu5uX8c6tY/h4AE"', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '913c252def07823a-SIN', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=31414&amp;min_rtt=31166&amp;rtt_var=11864&amp;sent=5&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=2835&amp;recv_bytes=880&amp;delivery_rate=130911&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=c198c334db3a3c91&amp;ts=434&amp;x=0"'} 
+ body={"name":"morpheus","job":"leader","id":"993","createdAt":"2025-02-18T07:01:19.971Z"} 
+ </msg>
+<msg time="2025-02-18T14:01:19.503712" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-02-18T14:01:18.978914" elapsed="0.524798"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2025-02-18T14:01:19.504708" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2025-02-18T14:01:18.978914" elapsed="0.525794"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${DELETE}&quot;">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:19.504708" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:19.504708" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:19.504708" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${PUT}&quot;">
+<kw name="PUT On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:19.504708" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:19.504708" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:19.504708" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-18T14:01:18.978914" elapsed="0.525794"/>
+</if>
+<msg time="2025-02-18T14:01:19.504708" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>https://reqres.in</arg>
+<arg>post</arg>
+<arg>/api/users</arg>
+<arg>data=${create_user}</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:18.978914" elapsed="0.525794"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:19.504708" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.504708" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:19.507229" level="INFO">${response_id} = 993</msg>
+<arg>${response_id}</arg>
+<arg>${response.json()['id']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.506212" elapsed="0.001017"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:19.507229" level="INFO">${response_createdAt} = 2025-02-18T07:01:19.971Z</msg>
+<arg>${response_createdAt}</arg>
+<arg>${response.json()['createdAt']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.507229" elapsed="0.000000"/>
+</kw>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:18.977917" elapsed="0.529312"/>
+</kw>
+<kw name="Prepare User Detail Expected" owner="reqres_keyword">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-02-18T14:01:19.508225" level="INFO">${exp_user_detail_1} = {'name': 'morpheus', 'job': 'leader', 'id': '993', 'createdAt': '2025-02-18T07:01:19.971Z'}</msg>
+<var>${exp_user_detail_1}</var>
+<arg>name=${response_name}</arg>
+<arg>job=${reponse_job}</arg>
+<arg>id=${reponse_id}</arg>
+<arg>createdAt=${response_createdAt}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.508225" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:19.508225" level="INFO">${exp_user_detail_1} = {'name': 'morpheus', 'job': 'leader', 'id': '993', 'createdAt': '2025-02-18T07:01:19.971Z'}</msg>
+<arg>${exp_user_detail_1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.508225" elapsed="0.000000"/>
+</kw>
+<arg>morpheus</arg>
+<arg>leader</arg>
+<arg>${response_id}</arg>
+<arg>${response_createdAt}</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:19.508225" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Status Code" owner="reqres_keyword">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:19.509224" level="INFO">${respones_status_code} = 201</msg>
+<var>${respones_status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.509224" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-18T14:01:19.509224" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${respones_status_code}</arg>
+<arg>${expected_status_code}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.509224" elapsed="0.000000"/>
+</kw>
+<arg>${response}</arg>
+<arg>201</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:19.509224" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Response Message" owner="reqres_keyword">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:19.510220" level="INFO">${respones_message} = {'name': 'morpheus', 'job': 'leader', 'id': '993', 'createdAt': '2025-02-18T07:01:19.971Z'}</msg>
+<var>${respones_message}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.510220" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-18T14:01:19.510220" level="INFO">Argument types are:
+&lt;class 'dict'&gt;
+&lt;class 'robot.utils.dotdict.DotDict'&gt;</msg>
+<arg>${respones_message}</arg>
+<arg>${expected_message}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.510220" elapsed="0.000000"/>
+</kw>
+<arg>${response}</arg>
+<arg>${exp_user_detail_1}</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:19.509224" elapsed="0.000996"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+*** Description ***
+ตรวจสอบการสร้าง user บนเว็บไซต์ reqres.in
+==&gt;
+*** Test Data ***
+"name": "morpheus",
+"job": "leader"
+==&gt;
+*** Test Steps ***
+1. จัดเตรียม payload สําหรับสร้าง user
+2. ส่ง request สําหรับสร้าง user ไปที่ https://reqres.in/api/users
+3. ตรวจสอบ response code และ response message
+==&gt;
+*** Expect Result ***
+1. Response Code :201
+2. Response Message :
+"name": "morpheus",
+"job": "leader",
+"id": "XXX",
+"createdAt": "XXXX-XX-XXXXX:XX:XX.XXXX"
+==&gt;</doc>
+<tag>Create</tag>
+<status status="PASS" start="2025-02-18T14:01:18.975908" elapsed="0.534312"/>
+</test>
+<test id="s1-t2" name="Verify Update User Information Success" line="34">
+<kw name="Edit User" owner="reqres_keyword">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-02-18T14:01:19.512213" level="INFO">${edit_user} = {'name': 'morpheus', 'job': 'zion resident'}</msg>
+<var>${edit_user}</var>
+<arg>C:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\reqres/../../resources/reqres/schema/edit_user.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.512213" elapsed="0.000000"/>
+</kw>
+<kw name="Call API" owner="reqres_keyword">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-02-18T14:01:19.512213" level="INFO">Creating Session using : alias=create_session, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>create_session</arg>
+<arg>${base_url}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-02-18T14:01:19.512213" elapsed="0.000997"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${method}&quot; == &quot;${GET}&quot;">
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:19.513210" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:19.513210" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:19.513210" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${POST}&quot;">
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:19.513210" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:19.513210" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:19.513210" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${DELETE}&quot;">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:19.513210" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:19.513210" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:19.513210" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${PUT}&quot;">
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-02-18T14:01:20.008642" level="INFO">PUT Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '44', 'Content-Type': 'application/json'} 
+ body=b'{"name": "morpheus", "job": "zion resident"}' 
+ </msg>
+<msg time="2025-02-18T14:01:20.009640" level="INFO">PUT Response : url=https://reqres.in/api/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 18 Feb 2025 07:01:20 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1739862080&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=KaV17YPg%2B8nEnpEaXGCN4rwAHtRoECkkCeIgQ9s2BKw%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1739862080&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=KaV17YPg%2B8nEnpEaXGCN4rwAHtRoECkkCeIgQ9s2BKw%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"50-xcv5/LmSN5Hnc845sXkVdE8F2RU"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '913c25312ffbff91-SIN', 'Content-Encoding': 'gzip', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=32946&amp;min_rtt=32775&amp;rtt_var=12413&amp;sent=5&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=2836&amp;recv_bytes=888&amp;delivery_rate=124485&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=10497aa02203a13c&amp;ts=428&amp;x=0"'} 
+ body={"name":"morpheus","job":"zion resident","updatedAt":"2025-02-18T07:01:20.476Z"} 
+ </msg>
+<msg time="2025-02-18T14:01:20.009640" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-02-18T14:01:19.513210" elapsed="0.496430"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2025-02-18T14:01:20.009640" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2025-02-18T14:01:19.513210" elapsed="0.496430"/>
+</branch>
+<status status="PASS" start="2025-02-18T14:01:19.513210" elapsed="0.496430"/>
+</if>
+<msg time="2025-02-18T14:01:20.009640" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>https://reqres.in</arg>
+<arg>put</arg>
+<arg>/api/users/2</arg>
+<arg>data=${edit_user}</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:19.512213" elapsed="0.497427"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.010636" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.009640" elapsed="0.000996"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.011632" level="INFO">${response_updatedAt} = 2025-02-18T07:01:20.476Z</msg>
+<arg>${response_updatedAt}</arg>
+<arg>${response.json()['updatedAt']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.010636" elapsed="0.000996"/>
+</kw>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:19.512213" elapsed="0.499419"/>
+</kw>
+<kw name="Prepare User Detail After Edit Expected" owner="reqres_keyword">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.012629" level="INFO">${exp_user_detail_1} = {'name': 'morpheus', 'job': 'zion resident', 'updatedAt': '2025-02-18T07:01:20.476Z'}</msg>
+<var>${exp_user_detail_1}</var>
+<arg>name=${response_name}</arg>
+<arg>job=${reponse_job}</arg>
+<arg>updatedAt=${response_updatedAt}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.012629" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.012629" level="INFO">${exp_user_detail_1} = {'name': 'morpheus', 'job': 'zion resident', 'updatedAt': '2025-02-18T07:01:20.476Z'}</msg>
+<arg>${exp_user_detail_1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.012629" elapsed="0.000000"/>
+</kw>
+<arg>morpheus</arg>
+<arg>zion resident</arg>
+<arg>${response_updatedAt}</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.011632" elapsed="0.000997"/>
+</kw>
+<kw name="Validate Status Code" owner="reqres_keyword">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.013625" level="INFO">${respones_status_code} = 200</msg>
+<var>${respones_status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.013625" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.013625" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${respones_status_code}</arg>
+<arg>${expected_status_code}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.013625" elapsed="0.000997"/>
+</kw>
+<arg>${response}</arg>
+<arg>200</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.013625" elapsed="0.000997"/>
+</kw>
+<kw name="Validate Response Message" owner="reqres_keyword">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.014622" level="INFO">${respones_message} = {'name': 'morpheus', 'job': 'zion resident', 'updatedAt': '2025-02-18T07:01:20.476Z'}</msg>
+<var>${respones_message}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.014622" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.014622" level="INFO">Argument types are:
+&lt;class 'dict'&gt;
+&lt;class 'robot.utils.dotdict.DotDict'&gt;</msg>
+<arg>${respones_message}</arg>
+<arg>${expected_message}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.014622" elapsed="0.000000"/>
+</kw>
+<arg>${response}</arg>
+<arg>${exp_user_detail_1}</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.014622" elapsed="0.000000"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+*** Description ***
+ตรวจสอบการแก้ไข user information บนเว็บไซต์ reqres.in
+==&gt;
+*** Test Data ***
+"name": "morpheus",
+"job": "zion resident"
+==&gt;
+*** Test Steps ***
+1. จัดเตรียม payload สําหรับแก้ไข user
+2. ส่ง request แก้ไข user ไปที่ https://reqres.in/api/users/2
+3. ตรวจสอบ response code และ response message
+==&gt;
+*** Expect Result ***
+1. Response Code :200
+2. Response Message :
+"name": "morpheus",
+"job": "zion resident",
+"updatedAt": "XXXX-XX-XXXXX:XX:XX.XXXX"
+==&gt;</doc>
+<tag>Edit</tag>
+<status status="PASS" start="2025-02-18T14:01:19.511217" elapsed="0.503405"/>
+</test>
+<test id="s1-t3" name="Verify Delete User Success" line="61">
+<kw name="Delete User" owner="reqres_keyword">
+<kw name="Call API" owner="reqres_keyword">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-02-18T14:01:20.017143" level="INFO">Creating Session using : alias=create_session, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>create_session</arg>
+<arg>${base_url}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-02-18T14:01:20.017143" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${method}&quot; == &quot;${GET}&quot;">
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:20.017143" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:20.017143" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:20.017143" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${POST}&quot;">
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:20.018141" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:20.018141" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:20.017143" elapsed="0.000998"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${DELETE}&quot;">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-02-18T14:01:20.504437" level="INFO">DELETE Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-02-18T14:01:20.505943" level="INFO">DELETE Response : url=https://reqres.in/api/users/2 
+ status=204, reason=No Content 
+ headers={'Date': 'Tue, 18 Feb 2025 07:01:21 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1739862080&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=KaV17YPg%2B8nEnpEaXGCN4rwAHtRoECkkCeIgQ9s2BKw%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1739862080&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=KaV17YPg%2B8nEnpEaXGCN4rwAHtRoECkkCeIgQ9s2BKw%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '913c25344c59f8d4-SIN', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=31620&amp;min_rtt=31280&amp;rtt_var=11973&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2836&amp;recv_bytes=792&amp;delivery_rate=130434&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=328c589083666472&amp;ts=422&amp;x=0"'} 
+ body=None 
+ </msg>
+<msg time="2025-02-18T14:01:20.505943" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.018141" elapsed="0.487802"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2025-02-18T14:01:20.505943" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2025-02-18T14:01:20.018141" elapsed="0.487802"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${PUT}&quot;">
+<kw name="PUT On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:20.506979" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:20.506979" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:20.505943" elapsed="0.001036"/>
+</branch>
+<status status="PASS" start="2025-02-18T14:01:20.017143" elapsed="0.489836"/>
+</if>
+<msg time="2025-02-18T14:01:20.506979" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>https://reqres.in</arg>
+<arg>delete</arg>
+<arg>/api/users/2</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.017143" elapsed="0.489836"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.507974" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.506979" elapsed="0.000995"/>
+</kw>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.016124" elapsed="0.491850"/>
+</kw>
+<kw name="Validate Status Code" owner="reqres_keyword">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.509375" level="INFO">${respones_status_code} = 204</msg>
+<var>${respones_status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.507974" elapsed="0.001401"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.509375" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${respones_status_code}</arg>
+<arg>${expected_status_code}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.509375" elapsed="0.000000"/>
+</kw>
+<arg>${response}</arg>
+<arg>204</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.507974" elapsed="0.001401"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+*** Description ***
+ตรวจสอบการลบ user บนเว็บไซต์ reqres.in
+==&gt;
+*** Test Steps ***
+2. ส่ง request ลบ user ไปที่ https://reqres.in/api/users/2
+3. ตรวจสอบ response code และ response message
+==&gt;
+*** Expect Result ***
+1. Response Code :204
+==&gt;</doc>
+<tag>Delete</tag>
+<status status="PASS" start="2025-02-18T14:01:20.016124" elapsed="0.493251"/>
+</test>
+<test id="s1-t4" name="Single User" line="77">
+<kw name="Single User" owner="reqres_keyword">
+<kw name="Call API" owner="reqres_keyword">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-02-18T14:01:20.513361" level="INFO">Creating Session using : alias=create_session, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>create_session</arg>
+<arg>${base_url}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-02-18T14:01:20.513361" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${method}&quot; == &quot;${GET}&quot;">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-02-18T14:01:20.626012" level="INFO">GET Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-02-18T14:01:20.627035" level="INFO">GET Response : url=https://reqres.in/api/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 18 Feb 2025 07:01:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1739029566&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=sFRr1ftxKfdBJpAgZrqA7n%2FFcr7BaGBc%2B3rFhwZMFLY%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1739029566&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=sFRr1ftxKfdBJpAgZrqA7n%2FFcr7BaGBc%2B3rFhwZMFLY%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"152-ApQgGHL6RKwaebFlrPCYPBO1xHg"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '6343', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '913c253768cdfd1c-SIN', 'Content-Encoding': 'gzip', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=32679&amp;min_rtt=32255&amp;rtt_var=9627&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2834&amp;recv_bytes=770&amp;delivery_rate=119141&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=2c185d807a5a67a9&amp;ts=43&amp;x=0"'} 
+ body={"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}} 
+ </msg>
+<msg time="2025-02-18T14:01:20.627035" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.513361" elapsed="0.113674"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2025-02-18T14:01:20.627035" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2025-02-18T14:01:20.513361" elapsed="0.113674"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${POST}&quot;">
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:20.628031" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:20.628031" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:20.627035" elapsed="0.000996"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${DELETE}&quot;">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:20.628031" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:20.628031" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:20.628031" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${method}&quot; == &quot;${PUT}&quot;">
+<kw name="PUT On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>create_session</arg>
+<arg>${path_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>params=${query}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-02-18T14:01:20.629032" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-02-18T14:01:20.629032" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-02-18T14:01:20.628031" elapsed="0.001001"/>
+</branch>
+<status status="PASS" start="2025-02-18T14:01:20.513361" elapsed="0.115671"/>
+</if>
+<msg time="2025-02-18T14:01:20.629032" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>https://reqres.in</arg>
+<arg>get</arg>
+<arg>/api/users/2</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.513361" elapsed="0.115671"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.630034" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.629032" elapsed="0.001002"/>
+</kw>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.512364" elapsed="0.117670"/>
+</kw>
+<kw name="Prepare User Detail After Get Expected" owner="reqres_keyword">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-02-18T14:01:20.632026" level="INFO">${response_payload} = {'data': {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'avatar': 'https://reqres.in/img/faces/2-image.jpg'}, 'support': {'url': 'https://contentcaddy.io?ut...</msg>
+<var>${response_payload}</var>
+<arg>C:\\Users\\Win 10 Pro\\Desktop\\Automate\\TTSS Interview\\repository\\reqres/../../resources/reqres/schema/get_user_exp.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.631030" elapsed="0.000996"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.632026" level="INFO">${response_payload} = {'data': {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'avatar': 'https://reqres.in/img/faces/2-image.jpg'}, 'support': {'url': 'https://contentcaddy.io?ut...</msg>
+<arg>${response_payload}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.632026" elapsed="0.000000"/>
+</kw>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.630034" elapsed="0.001992"/>
+</kw>
+<kw name="Validate Status Code" owner="reqres_keyword">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.633022" level="INFO">${respones_status_code} = 200</msg>
+<var>${respones_status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.633022" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.634019" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${respones_status_code}</arg>
+<arg>${expected_status_code}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.634019" elapsed="0.000000"/>
+</kw>
+<arg>${response}</arg>
+<arg>200</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.633022" elapsed="0.000997"/>
+</kw>
+<kw name="Validate Response Message" owner="reqres_keyword">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-18T14:01:20.635136" level="INFO">${respones_message} = {'data': {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'avatar': 'https://reqres.in/img/faces/2-image.jpg'}, 'support': {'url': 'https://contentcaddy.io?ut...</msg>
+<var>${respones_message}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.634019" elapsed="0.001117"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${respones_message}</arg>
+<arg>${expected_message}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-18T14:01:20.635136" elapsed="0.000502"/>
+</kw>
+<arg>${response}</arg>
+<arg>${response_payload}</arg>
+<doc>Owner : supasete.1998@gmail.com</doc>
+<status status="PASS" start="2025-02-18T14:01:20.634019" elapsed="0.001619"/>
+</kw>
+<doc>Owner: supasete.1998@gmail.com
+*** Description ***
+ตรวจสอบการ Get user บนเว็บไซต์ reqres.in ใน ID ที่กำหนด
+==&gt;
+*** Test Steps ***
+1. ส่ง request Get user ไปที่ https://reqres.in/api/users/2
+2. ตรวจสอบ response code และ response message
+==&gt;
+*** Expect Result ***
+1. Response Code :200
+2. Response Message :
+{
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    },
+    "support": {
+        "url": "https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral",
+        "text": "Tired of writing endless social media content? Let Content Caddy generate it for you."
+    }
+}
+==&gt;</doc>
+<tag>Get</tag>
+<status status="PASS" start="2025-02-18T14:01:20.510371" elapsed="0.125267"/>
+</test>
+<status status="PASS" start="2025-02-18T14:01:18.846010" elapsed="1.790135"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Create</stat>
+<stat pass="1" fail="0" skip="0">Delete</stat>
+<stat pass="1" fail="0" skip="0">Edit</stat>
+<stat pass="1" fail="0" skip="0">Get</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Api Reqres">Api Reqres</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
